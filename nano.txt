@@ -1,0 +1,3 @@
+ga bisa dalam methode itu main paling atas, supaya bisa harus dipanggil dari atas dulu alias prototipe
+rekursif:
+manggil diri nya sendiri, dia butuh kasus dasar dan fenomena memanggil dirinya sendiri

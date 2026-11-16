@@ -105,9 +105,33 @@ class ItemTransaksi {
         }
         Barang* getBarang() { return barang; }
         int getJumlahBeli() { return jumlahBeli; }
+
+    void tampilkanBarisStruk() {
+    cout << barang->getKodeBarang() << " | "
+         << barang->getNamaBarang() << " | "
+         << barang->getHarga() << " x "
+         << jumlahBeli << " = Rp "
+         << hitungSubtotal() << endl;
+    }
 };
 
 int main() {
+    int kapasitas;
+    cout << "Jumlah jenis barang: ";
+    cin >> kapasitas;
+    cin.ignore();
+
+    ItemTransaksi** keranjangBelanja =
+        new ItemTransaksi*[kapasitas]();
+
+    for (int i = 0; i < kapasitas; i++){
+        string kode, nama;
+        double harga;
+        int jumlah;
+// kode, nama, harga, jumlah dibaca dari cin/getline
+        Barang* produk = new Barang(kode, nama, harga);
+        keranjangBelanja[i] = new ItemTransaksi(produk, jumlah);
+    }
     // SistemParkir app;
     // app.jalankanProgram();
     // return 0;
@@ -122,4 +146,16 @@ int main() {
         cout << daftar[i] -> getKodeBarang() << endl;
         cout << daftar[i] -> getNamaBarang() << endl;
     }
+
+    double totalBelanja = 0;
+    
+    for (int i = 0; i < kapasitas; i++) {
+        ItemTransaksi* item = keranjangBelanja[i];
+        if (item != nullptr) {
+            item->tampilkanBarisStruk();
+            totalBelanja += item->hitungSubtotal();
+        }
+    }
+    
+    cout << "Total: Rp " << totalBelanja << endl;
 }

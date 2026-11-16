@@ -127,8 +127,23 @@ int main() {
     for (int i = 0; i < kapasitas; i++){
         string kode, nama;
         double harga;
-        int jumlah;
-// kode, nama, harga, jumlah dibaca dari cin/getline
+        double jumlah;
+
+        cout << "\nBarang ke-" << i+1 << endl;
+
+        cout << "Kode  : ";
+        cin >> kode;
+        cin.ignore();             
+
+        cout << "Nama  : ";
+        getline(cin, nama);       
+
+        cout << "Harga : ";
+        cin >> harga;
+
+        cout << "Jumlah: ";
+        cin >> jumlah;
+        cin.ignore();
         Barang* produk = new Barang(kode, nama, harga);
         keranjangBelanja[i] = new ItemTransaksi(produk, jumlah);
     }

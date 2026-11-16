@@ -120,5 +120,6 @@ int main() {
     for(int i = 0; i < 3; i++){
         // daftar[i] -> tampilkan_data();
         cout << daftar[i] -> getKodeBarang() << endl;
+        cout << daftar[i] -> getNamaBarang() << endl;
     }
 }

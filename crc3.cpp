@@ -172,5 +172,13 @@ int main() {
         }
     }
     
-    cout << "Total: Rp " << totalBelanja << endl;
+    double diskon = 0;
+    if (totalBelanja >= 100000) {
+        diskon = totalBelanja * 0.10;
+    }
+    
+    double tagihanAkhir = totalBelanja - diskon;
+    cout << diskon << endl;
+    cout << tagihanAkhir << endl;
+    cout << "Total: Rp " << tagihanAkhir << endl;
 }

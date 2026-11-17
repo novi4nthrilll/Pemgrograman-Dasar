@@ -178,7 +178,7 @@ int main() {
     }
     
     double tagihanAkhir = totalBelanja - diskon;
-    cout << "Diskon: Rp." << diskon << endl;
-    cout << "Total: Rp." << totalBelanja << endl;
-    cout << "Bayar: Rp." << tagihanAkhir << endl;
+    cout << "Diskon: Rp" << diskon << endl;
+    cout << "Total: Rp" << totalBelanja << endl;
+    cout << "Bayar: Rp" << tagihanAkhir << endl;
 }
